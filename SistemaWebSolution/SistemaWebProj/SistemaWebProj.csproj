@@ -45,6 +45,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -147,10 +153,26 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ClientePedidoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LinhaPedidoController.cs" />
+    <Compile Include="Controllers\ProdutoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906020223572_InitialCreate.cs" />
+    <Compile Include="Migrations\201906020223572_InitialCreate.Designer.cs">
+      <DependentUpon>201906020223572_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906020224456_Initial.cs" />
+    <Compile Include="Migrations\201906020224456_Initial.Designer.cs">
+      <DependentUpon>201906020224456_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\ClientePedido.cs" />
+    <Compile Include="Models\LinhaPedido.cs" />
+    <Compile Include="Models\Produto.cs" />
+    <Compile Include="Models\SistemaWebProjContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -192,10 +214,24 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Produto\Create.cshtml" />
+    <Content Include="Views\Produto\Delete.cshtml" />
+    <Content Include="Views\Produto\Details.cshtml" />
+    <Content Include="Views\Produto\Edit.cshtml" />
+    <Content Include="Views\Produto\Index.cshtml" />
+    <Content Include="Views\LinhaPedido\Create.cshtml" />
+    <Content Include="Views\LinhaPedido\Delete.cshtml" />
+    <Content Include="Views\LinhaPedido\Details.cshtml" />
+    <Content Include="Views\LinhaPedido\Edit.cshtml" />
+    <Content Include="Views\LinhaPedido\Index.cshtml" />
+    <Content Include="Views\ClientePedido\Create.cshtml" />
+    <Content Include="Views\ClientePedido\Delete.cshtml" />
+    <Content Include="Views\ClientePedido\Details.cshtml" />
+    <Content Include="Views\ClientePedido\Edit.cshtml" />
+    <Content Include="Views\ClientePedido\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -209,6 +245,14 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201906020223572_InitialCreate.resx">
+      <DependentUpon>201906020223572_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906020224456_Initial.resx">
+      <DependentUpon>201906020224456_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
